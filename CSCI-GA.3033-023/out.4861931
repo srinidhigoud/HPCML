@@ -1,0 +1,4 @@
+./lab1.pytorch:83: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+1 62.167122185230255 271.2051637452096 314.64497378468513
+.............
