@@ -1,4 +1,5 @@
 from __future__ import print_function
+import sys
 import os
 import torch
 import torchvision
@@ -14,6 +15,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import time
 
+n = 1
 batch_size = 100   # input batch size for training
 epochs = 5       # number of epochs to train
 lr = 0.01
@@ -62,9 +64,11 @@ data_transform = transforms.Compose([
     transforms.ToTensor()
 ])
 train_dataset = data(csv_file='kaggleamazon/train.csv', root_dir='kaggleamazon/train-jpg/',transform = data_transform)
-train_loader = DataLoader(train_dataset,batch_size, num_workers=1)
+#agg_waiting_time = time.monotonic()
+train_loader = DataLoader(train_dataset,batch_size, num_workers=n)
+#agg_waiting_time = time.monotonic() - agg_waiting_time
 test_dataset = data(csv_file='kaggleamazon/test.csv', root_dir='kaggleamazon/train-jpg/',transform = data_transform)
-test_loader = DataLoader(test_dataset, batch_size,  num_workers=1)
+test_loader = DataLoader(test_dataset, batch_size,  num_workers=n)
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -83,36 +87,37 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
 
 
-def train(epoch, break_val,agg_io_time,agg_pre_time,agg_waiting_time):
+def train(epoch,agg_io_t,agg_pre_t,agg_waiting_t):
     waiting_time1 = time.monotonic()
     for batch_idx, (tio,tpre,data, target) in enumerate(train_loader):
         waiting_time = time.monotonic()-waiting_time1
-        agg_io_time += sum(tio)
-        agg_pre_time += sum(tpre)
-        agg_waiting_time += waiting_time
+        agg_io_t += sum(tio)
+        agg_pre_t += sum(tpre)
+        agg_waiting_t += waiting_time 
         data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
         output = net(data)
         loss = criterion(output, target)
-#         print(batch_idx, loss.data[0])
+        #print(batch_idx, loss.data[0])
         loss.backward()
         optimizer.step()
-        if batch_idx==break_val:
-            return
-        if batch_idx % 100 == 0:
+        if batch_idx % 100000 == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
                 100. * batch_idx / len(train_loader), loss.data[0]))
         waiting_time1 = time.monotonic()
-    return (agg_io_time,agg_pre_time,agg_waiting_time)
+    return (agg_io_t,agg_pre_t,agg_waiting_t)
 
 for epoch in range(1, epochs + 1):
-    (t1,t2,t3) = train(epoch,500,agg_io_time,agg_pre_time,agg_waiting_time)
+    (t1,t2,t3) = train(epoch,agg_io_time,agg_pre_time,agg_waiting_time)
 #     print(t1)
-#     print(".............")
+    #print(".............")
     agg_io_time += t1 
     agg_pre_time += t2
+
     agg_waiting_time += t3
-print(agg_io_time,agg_pre_time,agg_waiting_time)
+    #print(agg_io_time,agg_pre_time,agg_waiting_time)
+    #print(".............")
+print(n,agg_io_time,agg_pre_time,agg_waiting_time)
 print(".............")
 

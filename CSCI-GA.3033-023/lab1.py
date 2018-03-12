@@ -62,13 +62,6 @@ print("C3 elapsed time is:", total_tNP)
 print("Sum of C3 is:",sum(zNP))
 
 
-# In[47]:
-
-import matplotlib.pyplot as plt
-get_ipython().magic('matplotlib inline')
-plt.matshow(x)
-plt.show()
-
 
 # In[ ]:
 

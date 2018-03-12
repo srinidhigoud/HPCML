@@ -22,7 +22,7 @@ void c1(){
 		int sum = 0;
 		gettimeofday(&t1, NULL);
 		for(long i=0;i<size;i++){
-			sum+=arr[i];
+			sum = (sum+arr[i])%1024;
 			//printf("%d\n",sum);
 
 		}

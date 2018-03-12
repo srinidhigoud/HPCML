@@ -1,0 +1,9 @@
+Train Epoch: 1 [0/20000 (0%)]	Loss: 2.841001
+./lab1.pytorch:83: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+Train Epoch: 2 [0/20000 (0%)]	Loss: 1.340062
+Train Epoch: 3 [0/20000 (0%)]	Loss: 1.157477
+Train Epoch: 4 [0/20000 (0%)]	Loss: 1.105693
+Train Epoch: 5 [0/20000 (0%)]	Loss: 1.089159
+1 2993.56834403798 1645.1787419840693 4487.307268369943
+.............
