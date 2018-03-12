@@ -12,4 +12,4 @@
 #SBATCH --output=out.%j
 
 module load pytorch/python3.6/0.3.0_4
-python ./lab1.pytorch
+python ./labg1.pytorch
