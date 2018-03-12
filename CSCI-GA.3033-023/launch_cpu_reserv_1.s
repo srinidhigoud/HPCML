@@ -21,5 +21,5 @@
 
 #Uncomment to execute pytorch code
 module load pytorch/python3.6/0.3.0_4
-python ./lab1.pytorch 15
+python ./lab1.pytorch 16
 

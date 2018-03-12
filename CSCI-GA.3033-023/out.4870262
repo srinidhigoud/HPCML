@@ -1,6 +1,0 @@
-Reserve CPU
-Training starts with number of workers =  16
-Number of epochs =  5
-./lab1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
-  output = F.log_softmax(self.linear3(z))
-slurmstepd: error: *** JOB 4870262 ON gpu-01 CANCELLED AT 2018-03-12T16:32:13 ***
