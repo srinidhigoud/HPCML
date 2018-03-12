@@ -55,9 +55,6 @@ class data(Dataset):
             image = self.transform(image)
         t22 = time.monotonic()-t21
         labels = self.file.iloc[idx, 1].astype('int')
-
-        
-
         return (t12,t22,image,labels)
 data_transform = transforms.Compose([
     transforms.Resize((32,32)),
@@ -111,10 +108,11 @@ def train(epoch):
         waiting_time1 = time.monotonic()
     return (agg_io_t,agg_pre_t,agg_waiting_t)
 
+print("Training starts with number of workers = ",end=" ")
+print(n)
+cudnn.benchmark = True
 for epoch in range(1, epochs + 1):
     (t1,t2,t3) = train(epoch)
-#     print(t1)
-    #print(".............")
     agg_io_time += t1 
     agg_pre_time += t2
 
