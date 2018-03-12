@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "./lab1.pytorch", line 18, in <module>
+    n = int(sys.argv[1])
+IndexError: list index out of range
