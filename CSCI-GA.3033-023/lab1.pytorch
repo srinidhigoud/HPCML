@@ -112,20 +112,24 @@ print("Training starts with number of workers = ",end=" ")
 print(n)
 print ("Number of epochs = ",end = " ")
 print(epochs)
-print("Epoch{0:10} Aggregate I/O time{0:10} Aggregate Pre-proc time{0:10} Aggregate Loading time{0:10}".format(" "," "," "," a"))
+#print("Epoch{0:10} Aggregate I/O time{0:10} Aggregate Pre-proc time{0:10} Aggregate Loading time{0:10}".format(" "," "," "," a"))
 t0 = time.monotonic()
 for epoch in range(1, epochs + 1):
     (t1,t2,t3) = train(epoch)
     agg_io_time += t1 
     agg_pre_time += t2
-
     agg_waiting_time += t3
-    print("{0:10} {0:10} {0:10} {0:10}".format(agg_io_time,agg_pre_time,agg_waiting_time))
+    #print("{0:10} {0:10} {0:10} {0:10}".format(agg_io_time,agg_pre_time,agg_waiting_time))
     #print(agg_io_time,agg_pre_time,agg_waiting_time)
     #print(".............")
 #print("Aggregate ")
 t0 = time.monotonic()-t0
 avg_epoch_time = t0/epochs
 print("The average epoch time is: ",avg_epoch_time)
-print(n,agg_io_time,agg_pre_time,agg_waiting_time)
+print("The aggregate I/O time is: ",agg_io_time)
+print("The aggregate pre-processing time is: ",agg_pre_time)
+print("The aggregate loading time is: ",agg_waiting_time)
+
+#print(n,agg_io_time,agg_pre_time,agg_waiting_time)
+>>>>>>> a498ccc2208195b00c3453bb01be1d444a7e7387
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
