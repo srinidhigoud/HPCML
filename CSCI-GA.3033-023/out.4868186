@@ -1,7 +1,0 @@
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Training starts with number of workers =  1
-Number of epochs =  5
-Traceback (most recent call last):
-  File "./lab1.pytorch", line 116, in <module>
-    print("Epoch{0:10} Aggregate I/O time{0:10} Aggregate Pre-proc time{0:10} Aggregate Loading time{0:10}".format())
-IndexError: tuple index out of range
