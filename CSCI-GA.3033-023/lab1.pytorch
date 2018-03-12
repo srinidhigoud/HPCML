@@ -15,7 +15,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import time
 
-n = 1
+n = 15
 batch_size = 100   # input batch size for training
 epochs = 5       # number of epochs to train
 lr = 0.01
