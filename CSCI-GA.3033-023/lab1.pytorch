@@ -15,7 +15,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import time
 
-n = 1
+n = 15
 batch_size = 100   # input batch size for training
 epochs = 5       # number of epochs to train
 lr = 0.01
@@ -131,5 +131,4 @@ print("The aggregate pre-processing time is: ",agg_pre_time)
 print("The aggregate loading time is: ",agg_waiting_time)
 
 #print(n,agg_io_time,agg_pre_time,agg_waiting_time)
->>>>>>> a498ccc2208195b00c3453bb01be1d444a7e7387
 print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
