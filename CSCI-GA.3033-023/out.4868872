@@ -1,0 +1,9 @@
+Training starts with number of workers =  9
+Number of epochs =  5
+./lab1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  25.35446986891329
+The aggregate I/O time is:  847.5331080518663
+The aggregate pre-processing time is:  255.5133477076888
+The aggregate loading time is:  68.90479203127325
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -14,8 +14,8 @@ from torch.autograd import Variable
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import time
-
-n = 15
+#reserve
+n = 26
 batch_size = 100   # input batch size for training
 epochs = 5       # number of epochs to train
 lr = 0.01
@@ -107,7 +107,7 @@ def train(epoch):
         #         100. * batch_idx / len(train_loader), loss.data[0]))
         waiting_time1 = time.monotonic()
     return (agg_io_t,agg_pre_t,agg_waiting_t)
-
+print("Reserve CPU")
 print("Training starts with number of workers = ",end=" ")
 print(n)
 print ("Number of epochs = ",end = " ")
