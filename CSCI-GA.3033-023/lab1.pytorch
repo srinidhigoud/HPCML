@@ -10,7 +10,7 @@ import torch.optim as optim
 from PIL import Image
 from torchvision import datasets
 from torch.autograd import Variable
-import numpy as np
+
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import time
@@ -87,8 +87,11 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
 
 
-def train(epoch,agg_io_t,agg_pre_t,agg_waiting_t):
+def train(epoch):
     waiting_time1 = time.monotonic()
+    agg_io_t = 0
+    agg_pre_t = 0
+    agg_waiting_t = 0
     for batch_idx, (tio,tpre,data, target) in enumerate(train_loader):
         waiting_time = time.monotonic()-waiting_time1
         agg_io_t += sum(tio)
@@ -109,7 +112,7 @@ def train(epoch,agg_io_t,agg_pre_t,agg_waiting_t):
     return (agg_io_t,agg_pre_t,agg_waiting_t)
 
 for epoch in range(1, epochs + 1):
-    (t1,t2,t3) = train(epoch,agg_io_time,agg_pre_time,agg_waiting_time)
+    (t1,t2,t3) = train(epoch)
 #     print(t1)
     #print(".............")
     agg_io_time += t1 
