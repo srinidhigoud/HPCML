@@ -1,4 +1,5 @@
 
+
 # coding: utf-8
 
 # In[41]:
@@ -50,9 +51,11 @@ print("Sum of C2 is:",sum(z))
 
 # In[46]:
 
-
+xNP = np.array(x)
+wNP1 = np.array(w1)
+wNP2 = np.array(w2)
 start_tNP = time.time()
-zNP = (forwardNp(w2,forwardNp(w1,x)))
+zNP = (forwardNp(wNP2,forwardNp(wNP1,xNP)))
 end_tNP = time.time()
 total_tNP = end_tNP - start_tNP
 print("C3 elapsed time is:", total_tNP)

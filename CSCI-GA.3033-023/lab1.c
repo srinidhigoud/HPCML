@@ -8,12 +8,13 @@
 #define max(x,y) (((x) > (y)) ? (x) : (y))
 void c1(){
 	//clock_t start_t,end_t,total_t;
-	struct timeval t1, t2;
-	double total_t;
 	double max_BW = 0;
-	int epochs = 16;
+	int epochs = 16;	
 	while(epochs>=0){
-		int *arr = (int*)malloc(size*sizeof(int));
+	struct timeval t1, t2;
+        double total_t;
+  
+	int *arr = (int*)malloc(size*sizeof(int));
 		for(long i=0;i<size;i++){
 			arr[i] = 0;
 		}
@@ -31,7 +32,7 @@ void c1(){
 		//cout<<"time is "<<t<<endl;
 		total_t = (t2.tv_sec-t1.tv_sec)*1000000 + t2.tv_usec-t1.tv_usec;
 		double buf = (double)size*sizeof(int)/total_t;
-		printf("%d \t %d \t Bandwidth = %f GB/s\n",16-epochs,sum, buf);
+		printf("%d \t %d \t Bandwidth = %f MB/s\n",16-epochs,sum, buf);
 		max_BW = max(max_BW,buf);
 		epochs--;
 	}
@@ -119,7 +120,7 @@ double* forward5(double* mat, double* x, int l, int h){
 	double *output = (double*)mkl_malloc(l*sizeof(double),64);
 	//h is input layer, l is output layer dimensions
     cblas_dgemv(CblasRowMajor, CblasNoTrans, l, h, 1, mat, h, x, 1, 0, output, 1);
-    for(int i=0;i<l;i++) output[i] = max(0.0,output[i]);
+    for(int i=0;i<l;i++) output[i] = (output[i]<0)?0:output[i];
 	return output;
 
 }
