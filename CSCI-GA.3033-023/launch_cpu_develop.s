@@ -10,8 +10,8 @@
 #SBATCH --output=out.%j
 
 #Uncomment to execute C code
-#module load intel/17.0.1
-#./lab1
+module load intel/17.0.1
+./lab1
 
 #Uncomment to execute python code
 #module purge
@@ -19,5 +19,5 @@
 #python ./lab1.py
 
 #Uncomment to execute pytorch code
-module load pytorch/python3.6/0.3.0_4
-python ./lab1.pytorch
+#module load pytorch/python3.6/0.3.0_4
+#python ./lab1.pytorch

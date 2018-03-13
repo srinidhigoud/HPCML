@@ -1,0 +1,11 @@
+Reserve CPU
+Training starts with number of workers =  18
+Number of epochs =  5
+./lab1.pytorch:83: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+Traceback (most recent call last):
+  File "./lab1.pytorch", line 168, in <module>
+    main()
+  File "./lab1.pytorch", line 149, in main
+    agg_io_time += t1 
+UnboundLocalError: local variable 'agg_io_time' referenced before assignment

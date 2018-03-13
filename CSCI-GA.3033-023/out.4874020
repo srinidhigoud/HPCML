@@ -1,0 +1,4 @@
+  File "./labg1.pytorch", line 119
+    waiting_time1 = time.monotonic()
+                ^
+IndentationError: expected an indented block

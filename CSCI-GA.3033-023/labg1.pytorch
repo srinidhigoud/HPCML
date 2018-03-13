@@ -17,9 +17,9 @@ from torchvision import transforms, utils
 import time
 
 #parameters
-n = 10
+n = 18
 batch_size = 100   # input batch size for training
-epochs = 5       # number of epochs to train
+epochs = 10       # number of epochs to train
 lr = 0.01
 num_inputs_1 = 3072
 num_outputs_1 = 1024
@@ -108,10 +108,10 @@ def main():
     #Set the loss criterion 
 
     criterion = nn.CrossEntropyLoss().cuda()
-    # optimizer = optim.SGD(net.parameters(), lr=lr)
-    optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
-    # optimizer = optim.Adam(net.parameters(), lr = lr)
-    optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
+    #optimizer = optim.SGD(net.parameters(), lr=lr)
+   # optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
+    optimizer = optim.Adam(net.parameters(), lr = lr)
+#    optimizer = optim.SGD(net.parameters(), lr=lr, momentum = 0.9)
 
 
     #Train
@@ -143,7 +143,7 @@ def main():
         return (agg_io_t,agg_pre_t,agg_waiting_t)
     
 
-    print("GPU Reserv")
+    print("GPU Reserv ADA")
     print("Training starts with number of workers = ",end=" ")
     print(n)
     print ("Number of epochs = ",end = " ")
