@@ -20,4 +20,16 @@
 
 #Uncomment to execute pytorch code
 module load pytorch/python3.6/0.3.0_4
-python ./lab1.pytorch
+python ./lab1_1.pytorch 13
+python ./lab1_1.pytorch 14
+python ./lab1_1.pytorch 15
+python ./lab1_1.pytorch 16
+python ./lab1_1.pytorch 17
+python ./lab1_1.pytorch 18
+python ./lab1_1.pytorch 19
+python ./lab1_1.pytorch 20
+python ./lab1_1.pytorch 21
+python ./lab1_1.pytorch 22
+python ./lab1_1.pytorch 23
+python ./lab1_1.pytorch 24
+python ./lab1_1.pytorch 25

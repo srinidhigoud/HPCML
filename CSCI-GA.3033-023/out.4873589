@@ -1,0 +1,94 @@
+Develop CPU
+Training starts with number of workers =  13
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  27.281924717128277
+The aggregate I/O time is:  1422.875155851245
+The aggregate pre-processing time is:  268.31829483248293
+The aggregate loading time is:  59.41294152662158
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  14
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  26.816236089542507
+The aggregate I/O time is:  1559.2932830043137
+The aggregate pre-processing time is:  233.36620006151497
+The aggregate loading time is:  53.3407716229558
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  15
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  26.138010253757237
+The aggregate I/O time is:  1626.4398127216846
+The aggregate pre-processing time is:  236.4529694262892
+The aggregate loading time is:  50.50945058837533
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  16
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  26.225945015996693
+The aggregate I/O time is:  1746.7470027580857
+The aggregate pre-processing time is:  240.7894897442311
+The aggregate loading time is:  41.46681607700884
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  17
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  26.537540175020695
+The aggregate I/O time is:  1898.290726127103
+The aggregate pre-processing time is:  240.44292674213648
+The aggregate loading time is:  43.997087674215436
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  18
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  25.343265711143612
+The aggregate I/O time is:  1920.0050336197019
+The aggregate pre-processing time is:  240.8300084453076
+The aggregate loading time is:  41.040928887203336
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  19
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  26.26182758025825
+The aggregate I/O time is:  2113.26885362342
+The aggregate pre-processing time is:  240.7932960037142
+The aggregate loading time is:  36.84875907935202
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  20
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  25.583214016258715
+The aggregate I/O time is:  2185.9112281501293
+The aggregate pre-processing time is:  242.3784246724099
+The aggregate loading time is:  36.749466590583324
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  21
+Number of epochs =  5
+./lab1_1.pytorch:80: UserWarning: Implicit dimension choice for log_softmax has been deprecated. Change the call to include dim=X as an argument.
+  output = F.log_softmax(self.linear3(z))
+The average epoch time is:  25.385343835130335
+The aggregate I/O time is:  2261.9668860808015
+The aggregate pre-processing time is:  243.54707432352006
+The aggregate loading time is:  32.045307936146855
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Develop CPU
+Training starts with number of workers =  22
+Number of epochs =  5
+slurmstepd: error: *** JOB 4873589 ON c39-09 CANCELLED AT 2018-03-12T20:23:13 DUE TO TIME LIMIT ***
