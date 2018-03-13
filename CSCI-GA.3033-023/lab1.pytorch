@@ -17,7 +17,7 @@ import time
 
 #reserve
 #parameters
-n = int(sys.argv[1])
+n = 18
 batch_size = 100   # input batch size for training
 epochs = 5       # number of epochs to train
 lr = 0.01
