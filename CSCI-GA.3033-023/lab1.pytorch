@@ -89,7 +89,12 @@ class Net(nn.Module):
 
 
 def main():
-    
+
+    agg_io_time = 0
+    agg_pre_time = 0
+    agg_waiting_time = 0
+
+
     #Load the data
 
     train_dataset = data(csv_file='kaggleamazon/train.csv', root_dir='kaggleamazon/train-jpg/',transform = data_transform)
