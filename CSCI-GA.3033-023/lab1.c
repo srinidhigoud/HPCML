@@ -4,7 +4,7 @@
 #include <time.h>
 #include "mkl.h"
 
-#define size 1024*1024*512
+#define size 1024*1024*1024*512
 #define max(x,y) (((x) > (y)) ? (x) : (y))
 void c1(){
 	//clock_t start_t,end_t,total_t;
