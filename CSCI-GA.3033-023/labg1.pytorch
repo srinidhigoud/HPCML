@@ -85,30 +85,7 @@ class Net(nn.Module):
         return output
 
 
-def train(epoch):
-    waiting_time1 = time.monotonic()
-    agg_io_t = 0
-    agg_pre_t = 0
-    agg_waiting_t = 0
-    for batch_idx, (tio,tpre,data, target) in enumerate(train_loader):
-        waiting_time = time.monotonic()-waiting_time1
-        agg_io_t += sum(tio)
-        agg_pre_t += sum(tpre)
-        agg_waiting_t += waiting_time 
-        data, target = Variable(data.cuda()), Variable(target.cuda())
-        optimizer.zero_grad()
-        output = net(data)
-        loss = criterion(output, target)
-        #print(batch_idx, loss.data[0])
-        loss.backward()
-        # optimizer.step()
-        # if batch_idx % 100000 == 0:
-        #     print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-        #         epoch, batch_idx * len(data), len(train_loader.dataset),
-        #         100. * batch_idx / len(train_loader), loss.data[0]))
-        waiting_time1 = time.monotonic()
-    return (agg_io_t,agg_pre_t,agg_waiting_t)
-cudnn.benchmark = True
+
 
 def main():  
     
@@ -135,6 +112,33 @@ def main():
 
 
     #Train
+
+    cudnn.benchmark = True
+    
+    def train(epoch):
+    waiting_time1 = time.monotonic()
+    agg_io_t = 0
+    agg_pre_t = 0
+    agg_waiting_t = 0
+    for batch_idx, (tio,tpre,data, target) in enumerate(train_loader):
+        waiting_time = time.monotonic()-waiting_time1
+        agg_io_t += sum(tio)
+        agg_pre_t += sum(tpre)
+        agg_waiting_t += waiting_time 
+        data, target = Variable(data.cuda()), Variable(target.cuda())
+        optimizer.zero_grad()
+        output = net(data)
+        loss = criterion(output, target)
+        #print(batch_idx, loss.data[0])
+        loss.backward()
+        # optimizer.step()
+        # if batch_idx % 100000 == 0:
+        #     print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+        #         epoch, batch_idx * len(data), len(train_loader.dataset),
+        #         100. * batch_idx / len(train_loader), loss.data[0]))
+        waiting_time1 = time.monotonic()
+    return (agg_io_t,agg_pre_t,agg_waiting_t)
+    
 
     print("GPU Reserv")
     print("Training starts with number of workers = ",end=" ")
