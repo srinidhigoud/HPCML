@@ -46,7 +46,7 @@ z = (forward(w2,forward(w1,x)))
 end_t = time.time()
 total_t = end_t - start_t 
 print("C2 elapsed time is:", total_t)
-print("Sum of C2 is:",sum(z))
+print("Sum of- for C2 is:",sum(z))
 
 
 # In[46]:
@@ -59,7 +59,7 @@ zNP = (forwardNp(wNP2,forwardNp(wNP1,xNP)))
 end_tNP = time.time()
 total_tNP = end_tNP - start_tNP
 print("C3 elapsed time is:", total_tNP)
-print("Sum of C3 is:",sum(zNP))
+print("Sum of- for C3 is:",sum(zNP))
 
 
 
